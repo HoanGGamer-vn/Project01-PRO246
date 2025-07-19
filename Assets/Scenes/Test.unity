@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 177618960}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Tilemap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -679,7 +679,7 @@ GameObject:
   - component: {fileID: 1328390841}
   m_Layer: 0
   m_Name: red
-  m_TagString: Untagged
+  m_TagString: Red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -714,7 +714,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 1328390840}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dea25665321582546aa5b3a2e17f164e, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -749,12 +749,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.4883721, y: 0.5697674}
-      - {x: -0.4883721, y: -0.20930232}
-      - {x: -0.22093023, y: -0.5697674}
-      - {x: 0.26744187, y: -0.5697674}
-      - {x: 0.46511626, y: -0.29069766}
-      - {x: 0.46511626, y: 0.5697674}
+    - - {x: -0.491575, y: 0.5729247}
+      - {x: -0.4883721, y: -0.18061365}
+      - {x: -0.21774258, y: -0.5570168}
+      - {x: 0.17500079, y: -0.5570168}
+      - {x: 0.4459908, y: -0.18550596}
+      - {x: 0.44280267, y: 0.57612747}
   m_UseDelaunayMesh: 0
 --- !u!114 &1328390843
 MonoBehaviour:
@@ -768,6 +768,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab3b6830845ca74e86e097d39172bc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 537756d9aa46c0847b3617f3b7b88e31, type: 2}
+  blue_rb: {fileID: 1438878032}
   moveSpeed: 5
   jumpForce: 5
 --- !u!50 &1328390844
@@ -858,7 +860,7 @@ Transform:
   m_GameObject: {fileID: 1328390840}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.455147, y: -1.5512555, z: 0}
+  m_LocalPosition: {x: -6.37, y: -1.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -880,7 +882,7 @@ GameObject:
   - component: {fileID: 1438878029}
   m_Layer: 0
   m_Name: blue
-  m_TagString: Untagged
+  m_TagString: Blue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -915,7 +917,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 1438878028}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dea25665321582546aa5b3a2e17f164e, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -951,11 +953,11 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -0.4883721, y: 0.5697674}
-      - {x: -0.4883721, y: -0.20930232}
-      - {x: -0.22093023, y: -0.5697674}
-      - {x: 0.26744187, y: -0.5697674}
-      - {x: 0.46511626, y: -0.29069766}
-      - {x: 0.46511626, y: 0.5697674}
+      - {x: -0.4883721, y: -0.17423846}
+      - {x: -0.21136726, y: -0.5570168}
+      - {x: 0.17181313, y: -0.557017}
+      - {x: 0.44917798, y: -0.17913064}
+      - {x: 0.4555533, y: 0.5697674}
   m_UseDelaunayMesh: 0
 --- !u!114 &1438878031
 MonoBehaviour:
@@ -969,6 +971,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a5c780fa82f60a46b4a3cdc92af728e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 537756d9aa46c0847b3617f3b7b88e31, type: 2}
+  red_rb: {fileID: 1328390844}
   moveSpeed: 5
   jumpForce: 5
 --- !u!50 &1438878032
@@ -987,7 +991,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 440f37e5f56dab94096112ce773a20ab, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1059,7 +1063,7 @@ Transform:
   m_GameObject: {fileID: 1438878028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5033193, y: -1.580939, z: 0}
+  m_LocalPosition: {x: -4.77, y: -1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
