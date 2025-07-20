@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Red
+  - Blue
+  - TileMap
+  - Tilemap
   layers:
   - Default
   - TransparentFX
@@ -40,4 +44,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Map
+    uniqueID: 2580138217
+    locked: 0
+  - name: Button
+    uniqueID: 1021678207
+    locked: 0
+  - name: Player
+    uniqueID: 600768843
+    locked: 0
+  - name: New Layer 4
+    uniqueID: 209189035
     locked: 0
