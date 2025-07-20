@@ -4,18 +4,27 @@ using UnityEngine;
 
 public class RedController : MonoBehaviour
 {
+    public Data data;
     private SpriteRenderer sprite;
     private Rigidbody2D rb;
+    public Rigidbody2D blue_rb;
     private Animator animator;
 
     public float moveSpeed;
     public float jumpForce;
+
+    private bool isTouchingBlue;
+    private bool canJump;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+
+        isTouchingBlue = false;
+        data.isRedGrounded = false;
+        canJump = false;
     }
 
     void Update()
@@ -26,13 +35,13 @@ public class RedController : MonoBehaviour
         {
             moveInput = -1f;
             sprite.flipX = true;
-            animator.SetBool("isRunning", animator.GetBool("isGrounded"));
+            animator.SetBool("isRunning", true);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             moveInput = 1f;
             sprite.flipX = false;
-            animator.SetBool("isRunning", animator.GetBool("isGrounded"));
+            animator.SetBool("isRunning", true);
         }
         else
         {
@@ -40,10 +49,37 @@ public class RedController : MonoBehaviour
         }
 
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+        if (isTouchingBlue && data.isBlueStatic && !data.isBlueGrounded)
+        {
+            blue_rb.velocity = new Vector2(moveInput * moveSpeed, blue_rb.velocity.y);
+        }
 
-        if (Input.GetKeyDown(KeyCode.LeftControl) && animator.GetBool("isGrounded"))
+        if (transform.position.y > blue_rb.transform.position.y && transform.position.x > blue_rb.transform.position.x - 0.5f && transform.position.x < blue_rb.transform.position.x + 0.5f)
+        {
+            if (isTouchingBlue)
+            {
+                canJump = true;
+            }
+            else
+            {
+                canJump = false;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.LeftControl) && canJump)
         {
             rb.AddForce(new Vector2(rb.velocity.x, jumpForce), ForceMode2D.Impulse);
+        }
+
+
+        if (rb.velocity.magnitude < 0.01f)
+        {
+            data.isRedStatic = true;
+            Debug.Log("Red is static: " + data.isRedStatic);
+        }
+        else
+        {
+            data.isRedStatic = false;
+            Debug.Log("Red is not static: " + data.isRedStatic);
         }
     }
 
@@ -51,7 +87,12 @@ public class RedController : MonoBehaviour
     {
         if (redCollision.gameObject.CompareTag("Tilemap"))
         {
-            animator.SetBool("isGrounded", true);
+            data.isRedGrounded = true;
+            canJump = true;
+        }
+        if (redCollision.gameObject.CompareTag("Blue"))
+        {
+            isTouchingBlue = true;
         }
     }
 
@@ -59,7 +100,12 @@ public class RedController : MonoBehaviour
     {
         if (redCollision.gameObject.CompareTag("Tilemap"))
         {
-            animator.SetBool("isGrounded", false);
+            data.isRedGrounded = false;
+            canJump = false;
+        }
+        if (redCollision.gameObject.CompareTag("Blue"))
+        {
+            isTouchingBlue = false;
         }
     }
 }
