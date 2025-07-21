@@ -73,12 +73,10 @@ public class BlueController : MonoBehaviour
         if (rb.velocity.magnitude < 0.01f)
         {
             data.isBlueStatic = true;
-            Debug.Log("Blue is static: " + data.isBlueStatic);
         }
         else
         {
             data.isBlueStatic = false;
-            Debug.Log("Blue is moving: " + data.isBlueStatic);
         }
     }
     public void OnCollisionEnter2D(Collision2D blueCollision)
@@ -104,6 +102,13 @@ public class BlueController : MonoBehaviour
         if (blueCollision.gameObject.CompareTag("Red"))
         {
             isTouchingRed = false;
+        }
+    }
+    public void OnTriggerEnter2D(Collider2D blueTrigger)
+    {
+        if (blueTrigger.gameObject.CompareTag("LowLimit"))
+        {
+            rb.position = red_rb.position + new Vector2(0, 5f);
         }
     }
 }
