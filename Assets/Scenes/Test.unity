@@ -663,6 +663,16 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!50 &666715652 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 5935996131880174630, guid: 56563677db1eec24bafb467af7fad9e4, type: 3}
+  m_PrefabInstance: {fileID: 8098430585259175857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &899785217 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3362956106575406675, guid: b875d76bc6a6c7547ae8abd6b063ac2c, type: 3}
+  m_PrefabInstance: {fileID: 250591432465773114}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1994736103
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,6 +858,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8232703145551993889, guid: b875d76bc6a6c7547ae8abd6b063ac2c, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 537756d9aa46c0847b3617f3b7b88e31, type: 2}
+    - target: {fileID: 8232703145551993889, guid: b875d76bc6a6c7547ae8abd6b063ac2c, type: 3}
+      propertyPath: blue_rb
+      value: 
+      objectReference: {fileID: 666715652}
     - target: {fileID: 8615617594053541650, guid: b875d76bc6a6c7547ae8abd6b063ac2c, type: 3}
       propertyPath: m_Name
       value: red
@@ -865,6 +883,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6302116428350431052, guid: 56563677db1eec24bafb467af7fad9e4, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 537756d9aa46c0847b3617f3b7b88e31, type: 2}
+    - target: {fileID: 6302116428350431052, guid: 56563677db1eec24bafb467af7fad9e4, type: 3}
+      propertyPath: red_rb
+      value: 
+      objectReference: {fileID: 899785217}
     - target: {fileID: 6469019913828883064, guid: 56563677db1eec24bafb467af7fad9e4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.5033193
