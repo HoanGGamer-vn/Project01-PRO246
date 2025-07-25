@@ -31,13 +31,13 @@ public class RedController : MonoBehaviour
     {
         float moveInput = 0f;
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && data.canRedMoveLeft)
         {
             moveInput = -1f;
             sprite.flipX = true;
             animator.SetBool("isRunning", true);
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) && data.canRedMoveRight)
         {
             moveInput = 1f;
             sprite.flipX = false;
@@ -83,7 +83,7 @@ public class RedController : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D redCollision)
     {
-        if (redCollision.gameObject.CompareTag("Tilemap"))
+        if (redCollision.gameObject.CompareTag("Tilemap") || redCollision.gameObject.CompareTag("Elevator"))
         {
             data.isRedGrounded = true;
             canJump = true;
@@ -96,7 +96,7 @@ public class RedController : MonoBehaviour
 
     public void OnCollisionExit2D(Collision2D redCollision)
     {
-        if (redCollision.gameObject.CompareTag("Tilemap"))
+        if (redCollision.gameObject.CompareTag("Tilemap") || redCollision.gameObject.CompareTag("Elevator"))
         {
             data.isRedGrounded = false;
             canJump = false;
@@ -111,7 +111,12 @@ public class RedController : MonoBehaviour
     {
         if (redTrigger.gameObject.CompareTag("LowLimit"))
         {
-            rb.position = blue_rb.position + new Vector2(0, 5f);
+            StartCoroutine(WaitforRespawn(2.5f));
         }
+    }
+    private IEnumerator WaitforRespawn(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        rb.position = blue_rb.position + new Vector2(0, 5f);
     }
 }

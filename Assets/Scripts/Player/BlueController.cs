@@ -31,13 +31,13 @@ public class BlueController : MonoBehaviour
     {
         float moveInput = 0f;
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) && data.canBlueMoveLeft)
         {
             moveInput = -1f;
             sprite.flipX = true;
             animator.SetBool("isRunning", true);
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow) && data.canBlueMoveRight)
         {
             moveInput = 1f;
             sprite.flipX = false;
@@ -81,12 +81,12 @@ public class BlueController : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D blueCollision)
     {
-        if (blueCollision.gameObject.CompareTag("Tilemap"))
+        if (blueCollision.gameObject.CompareTag("Tilemap") || blueCollision.gameObject.CompareTag("Elevator"))
         {
             data.isBlueGrounded = true;
             canJump = true;
         }
-        if(blueCollision.gameObject.CompareTag("Red"))
+        if (blueCollision.gameObject.CompareTag("Red"))
         {
             isTouchingRed = true;
         }
@@ -94,7 +94,7 @@ public class BlueController : MonoBehaviour
 
     public void OnCollisionExit2D(Collision2D blueCollision)
     {
-        if (blueCollision.gameObject.CompareTag("Tilemap"))
+        if (blueCollision.gameObject.CompareTag("Tilemap") || blueCollision.gameObject.CompareTag("Elevator"))
         {
             data.isBlueGrounded = false;
             canJump = false;
@@ -108,7 +108,12 @@ public class BlueController : MonoBehaviour
     {
         if (blueTrigger.gameObject.CompareTag("LowLimit"))
         {
-            rb.position = red_rb.position + new Vector2(0, 5f);
+            StartCoroutine(WaitforRespawn(2.5f));
         }
+    }
+    private IEnumerator WaitforRespawn(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        rb.position = red_rb.position + new Vector2(0, 5f);
     }
 }

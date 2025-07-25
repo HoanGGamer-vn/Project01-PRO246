@@ -9,6 +9,8 @@ TagManager:
   - TileMap
   - Tilemap
   - LowLimit
+  - Elevator
+  - Key
   layers:
   - Default
   - TransparentFX
