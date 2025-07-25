@@ -8,4 +8,12 @@ public class Data : ScriptableObject
 
     public bool isBlueStatic;
     public bool isBlueGrounded;
+
+    public bool hasKey;
+    public bool isCompleted;
+
+    public bool canRedMoveRight;
+    public bool canRedMoveLeft;
+    public bool canBlueMoveRight;
+    public bool canBlueMoveLeft;
 }

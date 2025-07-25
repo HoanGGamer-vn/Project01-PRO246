@@ -9,7 +9,9 @@ TagManager:
   - TileMap
   - Tilemap
   - LowLimit
-  - Box
+  - Elevator
+  - Key
+  2d3d4d23fc23df41ab9ad8dd48dc49154d3f2784
   layers:
   - Default
   - TransparentFX
