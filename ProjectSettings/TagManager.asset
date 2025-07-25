@@ -9,6 +9,7 @@ TagManager:
   - TileMap
   - Tilemap
   - LowLimit
+  - Box
   layers:
   - Default
   - TransparentFX

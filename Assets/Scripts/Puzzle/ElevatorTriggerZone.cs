@@ -7,28 +7,29 @@ public class ElevatorTrigger : MonoBehaviour
 
     // Dùng để lưu tất cả người chơi đang đứng trong trigger
     private HashSet<Collider2D> playersOnElevator = new HashSet<Collider2D>();
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (IsRelevantTag(other))
         {
-            // Nếu chưa có trong danh sách thì thêm vào và thông báo
             if (playersOnElevator.Add(other))
             {
-                elevatorController.NotifyObjectEntered(playersOnElevator.Count);
+                elevatorController.CheckTagsCondition(playersOnElevator);
             }
         }
     }
-
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (IsRelevantTag(other))
         {
             if (playersOnElevator.Remove(other))
             {
-                elevatorController.NotifyObjectExited(playersOnElevator.Count);
+                elevatorController.CheckTagsCondition(playersOnElevator);
             }
         }
+    }
+    private bool IsRelevantTag(Collider2D other)
+    {
+        return other.CompareTag("Red") || other.CompareTag("Blue") || other.CompareTag("Box");
     }
 }
 

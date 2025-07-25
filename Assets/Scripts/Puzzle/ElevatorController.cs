@@ -1,11 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ElevatorController : MonoBehaviour
 {
     public Transform[] targets;
     public float moveSpeed = 2f;
-    public int requiredObjects = 2;
-    public bool returnWhenEmpty = true;
+    public bool returnWhenNotEnoughTags = true;
 
     private Vector3 startPosition;
     private bool isMoving = false;
@@ -15,17 +15,25 @@ public class ElevatorController : MonoBehaviour
         startPosition = transform.position;
     }
 
-    public void NotifyObjectEntered(int currentCount)
+    public void CheckTagsCondition(HashSet<Collider2D> currentObjects)
     {
-        if (currentCount >= requiredObjects && !isMoving)
-        {
-            MoveToTarget();
-        }
-    }
+        HashSet<string> tagSet = new HashSet<string>();
 
-    public void NotifyObjectExited(int currentCount)
-    {
-        if (currentCount < requiredObjects && returnWhenEmpty)
+        foreach (var obj in currentObjects)
+        {
+            if (obj == null) continue;
+
+            if (obj.CompareTag("Red")) tagSet.Add("Red");
+            else if (obj.CompareTag("Blue")) tagSet.Add("Blue");
+            else if (obj.CompareTag("Box")) tagSet.Add("Box");
+        }
+
+        if (tagSet.Count >= 2)
+        {
+            if (!isMoving)
+                MoveToTarget();
+        }
+        else if (returnWhenNotEnoughTags)
         {
             ReturnToStart();
         }
@@ -35,7 +43,7 @@ public class ElevatorController : MonoBehaviour
     {
         isMoving = true;
         StopAllCoroutines();
-        StartCoroutine(MoveElevator(targets[0].position)); // hoặc chọn nhiều target tùy logic
+        StartCoroutine(MoveElevator(targets[0].position));
     }
 
     private void ReturnToStart()
