@@ -1,16 +1,15 @@
-// Copyright (C) 2015 ricimi - All rights reserved.
-// This code can only be used under the standard Unity Asset Store End User License Agreement.
-// A Copy of the Asset Store EULA is available at http://unity3d.com/company/legal/as_terms.
+// Bản quyền (C) 2015 ricimi - Bảo lưu mọi quyền.
+// Mã này chỉ có thể được sử dụng theo Thỏa thuận Cấp phép Người dùng Cuối của Unity Asset Store.
+// Bản sao EULA của Asset Store có sẵn tại http://unity3d.com/company/legal/as_terms.
 
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Ricimi
 {
-    // Specialized behavior for the popup that opens before selecting a level to play in
-    // the demo. It showcases how to create a specialized popup with custom behavior: in this
-    // case, one to three stars can be displayed depending on the player score on that particular
-    // level.
+    // Hành vi chuyên biệt cho popup mở trước khi chọn level để chơi trong
+    // demo. Nó thể hiện cách tạo popup chuyên biệt với hành vi tùy chỉnh: trong trường hợp này,
+    // một đến ba sao có thể được hiển thị tùy thuộc vào điểm số của người chơi trên level đó.
     public class PlayPopup : Popup
     {
         public Color enabledColor;

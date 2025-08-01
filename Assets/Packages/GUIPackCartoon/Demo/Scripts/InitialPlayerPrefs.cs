@@ -1,12 +1,12 @@
-// Copyright (C) 2015 ricimi - All rights reserved.
-// This code can only be used under the standard Unity Asset Store End User License Agreement.
-// A Copy of the Asset Store EULA is available at http://unity3d.com/company/legal/as_terms.
+// Bản quyền (C) 2015 ricimi - Bảo lưu mọi quyền.
+// Mã này chỉ có thể được sử dụng theo Thỏa thuận Cấp phép Người dùng Cuối của Unity Asset Store.
+// Bản sao EULA của Asset Store có sẵn tại http://unity3d.com/company/legal/as_terms.
 
 using UnityEngine;
 
 namespace Ricimi
 {
-    // Utility class to force the music and sound effects to be enabled on first launch.
+    // Lớp tiện ích để bắt buộc nhạc và hiệu ứng âm thanh được bật khi khởi chạy lần đầu.
     public class InitialPlayerPrefs : MonoBehaviour
     {
         private void Awake()

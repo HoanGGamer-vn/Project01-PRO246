@@ -1,13 +1,13 @@
-// Copyright (C) 2015 ricimi - All rights reserved.
-// This code can only be used under the standard Unity Asset Store End User License Agreement.
-// A Copy of the Asset Store EULA is available at http://unity3d.com/company/legal/as_terms.
+// Bản quyền (C) 2015 ricimi - Bảo lưu mọi quyền.
+// Mã này chỉ có thể được sử dụng theo Thỏa thuận Cấp phép Người dùng Cuối của Unity Asset Store.
+// Bản sao EULA của Asset Store có sẵn tại http://unity3d.com/company/legal/as_terms.
 
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Ricimi
 {
-    // Utility class for swapping the sprite of a UI Image between two predefined values.
+    // Lớp tiện ích để hoán đổi sprite của UI Image giữa hai giá trị đã định trước.
     public class SpriteSwapper : MonoBehaviour
     {
         public Sprite enabledSprite;

@@ -1,16 +1,16 @@
-// Copyright (C) 2015 ricimi - All rights reserved.
-// This code can only be used under the standard Unity Asset Store End User License Agreement.
-// A Copy of the Asset Store EULA is available at http://unity3d.com/company/legal/as_terms.
+// Bản quyền (C) 2015 ricimi - Bảo lưu mọi quyền.
+// Mã này chỉ có thể được sử dụng theo Thỏa thuận Cấp phép Người dùng Cuối của Unity Asset Store.
+// Bản sao EULA của Asset Store có sẵn tại http://unity3d.com/company/legal/as_terms.
 
 using System.Collections;
 using UnityEngine;
 
 namespace Ricimi
 {
-    // This class manages the rotation of the example spin wheel in the demo.
+    // Lớp này quản lý việc xoay của vòng quay ví dụ trong demo.
     public class SpinWheel : MonoBehaviour
     {
-        // This animation curve drives the spin wheel motion.
+        // Đường cong animation này điều khiển chuyển động của vòng quay.
         public AnimationCurve AnimationCurve;
 
         private bool m_spinning = false;

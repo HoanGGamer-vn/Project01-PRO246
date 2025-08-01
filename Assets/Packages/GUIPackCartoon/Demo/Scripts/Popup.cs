@@ -1,6 +1,6 @@
-// Copyright (C) 2015 ricimi - All rights reserved.
-// This code can only be used under the standard Unity Asset Store End User License Agreement.
-// A Copy of the Asset Store EULA is available at http://unity3d.com/company/legal/as_terms.
+// Bản quyền (C) 2015 ricimi - Bảo lưu mọi quyền.
+// Mã này chỉ có thể được sử dụng theo Thỏa thuận Cấp phép Người dùng Cuối của Unity Asset Store.
+// Bản sao EULA của Asset Store có sẵn tại http://unity3d.com/company/legal/as_terms.
 
 using System.Collections;
 using UnityEngine;
@@ -8,8 +8,8 @@ using UnityEngine.UI;
 
 namespace Ricimi
 {
-    // This class is responsible for popup management. Popups follow the traditional behavior of
-    // automatically blocking the input on elements behind it and adding a background texture.
+    // Lớp này chịu trách nhiệm quản lý popup. Popup tuân theo hành vi truyền thống
+    // tự động chặn input trên các phần tử phía sau nó và thêm texture nền.
     public class Popup : MonoBehaviour
     {
         public Color backgroundColor = new Color(10.0f / 255.0f, 10.0f / 255.0f, 10.0f / 255.0f, 0.6f);
@@ -31,15 +31,17 @@ namespace Ricimi
             StartCoroutine(RunPopupDestroy());
         }
 
-        // We destroy the popup automatically 0.5 seconds after closing it.
-        // The destruction is performed asynchronously via a coroutine. If you
-        // want to destroy the popup at the exact time its closing animation is
-        // finished, you can use an animation event instead.
+        // Chúng ta tự động phá hủy popup sau 0.5 giây khi đóng nó.
+        // Việc phá hủy được thực hiện bất đồng bộ thông qua một coroutine. Nếu bạn
+        // muốn phá hủy popup đúng thời điểm animation đóng kết thúc,
+        // bạn có thể sử dụng animation event thay thế.
         private IEnumerator RunPopupDestroy()
         {
             yield return new WaitForSeconds(0.5f);
-            Destroy(m_background);
-            Destroy(gameObject);
+            if (m_background != null)
+                Destroy(m_background);
+            if (gameObject != null)
+                Destroy(gameObject);
         }
 
         private void AddBackground()
@@ -60,17 +62,35 @@ namespace Ricimi
             image.CrossFadeAlpha(1.0f, 0.4f, false);
 
             var canvas = GameObject.Find("Canvas");
-            m_background.transform.localScale = new Vector3(1, 1, 1);
-            m_background.GetComponent<RectTransform>().sizeDelta = canvas.GetComponent<RectTransform>().sizeDelta;
-            m_background.transform.SetParent(canvas.transform, false);
-            m_background.transform.SetSiblingIndex(transform.GetSiblingIndex());
+            if (canvas == null)
+            {
+                // Nếu không tìm thấy Canvas, tìm Canvas đầu tiên trong scene
+                canvas = FindObjectOfType<Canvas>()?.gameObject;
+            }
+            
+            if (canvas != null)
+            {
+                m_background.transform.localScale = new Vector3(1, 1, 1);
+                m_background.GetComponent<RectTransform>().sizeDelta = canvas.GetComponent<RectTransform>().sizeDelta;
+                m_background.transform.SetParent(canvas.transform, false);
+                m_background.transform.SetSiblingIndex(transform.GetSiblingIndex());
+            }
+            else
+            {
+                Debug.LogError("Không tìm thấy Canvas trong scene! Popup không thể hiển thị đúng cách.");
+                // Đặt background làm con của transform hiện tại làm fallback
+                m_background.transform.SetParent(transform.parent, false);
+            }
         }
 
         private void RemoveBackground()
         {
-            var image = m_background.GetComponent<Image>();
-            if (image != null)
-                image.CrossFadeAlpha(0.0f, 0.2f, false);
+            if (m_background != null)
+            {
+                var image = m_background.GetComponent<Image>();
+                if (image != null)
+                    image.CrossFadeAlpha(0.0f, 0.2f, false);
+            }
         }
     }
 }

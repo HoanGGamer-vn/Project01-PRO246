@@ -1,15 +1,15 @@
-// Copyright (C) 2015 ricimi - All rights reserved.
-// This code can only be used under the standard Unity Asset Store End User License Agreement.
-// A Copy of the Asset Store EULA is available at http://unity3d.com/company/legal/as_terms.
+// Bản quyền (C) 2015 ricimi - Bảo lưu mọi quyền.
+// Mã này chỉ có thể được sử dụng theo Thỏa thuận Cấp phép Người dùng Cuối của Unity Asset Store.
+// Bản sao EULA của Asset Store có sẵn tại http://unity3d.com/company/legal/as_terms.
 
 using System.Collections;
 using UnityEngine;
 
 namespace Ricimi
 {
-    // This class manages the audio source used to play the looping background song
-    // in the demo. The player can choose to mute the music, and this preference is
-    // persisted via Unity's PlayerPrefs.
+    // Lớp này quản lý audio source được sử dụng để phát bài hát nền lặp lại
+    // trong demo. Người chơi có thể chọn tắt tiếng nhạc, và tùy chọn này được
+    // lưu trữ thông qua PlayerPrefs của Unity.
     public class BackgroundMusic : MonoBehaviour
     {
         public static BackgroundMusic Instance;

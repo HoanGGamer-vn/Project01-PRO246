@@ -11,7 +11,9 @@ TagManager:
   - LowLimit
   - Elevator
   - Key
-  2d3d4d23fc23df41ab9ad8dd48dc49154d3f2784
+  - Player
+  - Enemy
+  - Box
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Puzzle
   - 
   - 
   - 
@@ -48,16 +50,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Map
-    uniqueID: 2580138217
-    locked: 0
-  - name: Button
-    uniqueID: 1021678207
-    locked: 0
-  - name: Player
-    uniqueID: 600768843
-    locked: 0
-  - name: New Layer 4
-    uniqueID: 209189035
     locked: 0

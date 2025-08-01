@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4809280446818683519}
   - component: {fileID: 3362956106575406675}
   - component: {fileID: 8232703145551993889}
-  - component: {fileID: 1293029069670557061}
   - component: {fileID: 8987430656012578866}
+  - component: {fileID: 1276145383151193808}
   m_Layer: 0
   m_Name: red
   m_TagString: Red
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 600768843
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1756168426, guid: a616fa53d0c0d0e45915f63fc4f1cbab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -103,7 +103,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -127,9 +127,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab3b6830845ca74e86e097d39172bc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 5
---- !u!60 &1293029069670557061
+  data: {fileID: 11400000, guid: 537756d9aa46c0847b3617f3b7b88e31, type: 2}
+  blue_rb: {fileID: 0}
+  moveSpeed: 3
+  jumpForce: 7
+--- !u!95 &8987430656012578866
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8615617594053541650}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 26cc57fba3b1fe04e9517c5c6faa132e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!60 &1276145383151193808
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,31 +196,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.4883721, y: 0.5697674}
-      - {x: -0.4883721, y: -0.20930232}
-      - {x: -0.22093023, y: -0.5697674}
-      - {x: 0.26744187, y: -0.5697674}
-      - {x: 0.46511626, y: -0.29069766}
-      - {x: 0.46511626, y: 0.5697674}
+    - - {x: -0.49052787, y: 0.48459947}
+      - {x: -0.49033856, y: -0.18242599}
+      - {x: -0.21842064, y: -0.55219525}
+      - {x: 0.17121375, y: -0.55219525}
+      - {x: 0.44839454, y: -0.18115553}
+      - {x: 0.44851613, y: 0.48632646}
   m_UseDelaunayMesh: 0
---- !u!95 &8987430656012578866
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8615617594053541650}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 26cc57fba3b1fe04e9517c5c6faa132e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0

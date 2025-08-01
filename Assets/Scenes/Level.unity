@@ -8025,6 +8025,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2913643178785850362, guid: b3c3d454955b54620b4a1722514ce76a, type: 3}
+      propertyPath: scene
+      value: LV1
+      objectReference: {fileID: 0}
     - target: {fileID: 7912388533651222819, guid: b3c3d454955b54620b4a1722514ce76a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

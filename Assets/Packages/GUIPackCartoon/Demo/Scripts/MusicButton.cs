@@ -1,14 +1,14 @@
-// Copyright (C) 2015 ricimi - All rights reserved.
-// This code can only be used under the standard Unity Asset Store End User License Agreement.
-// A Copy of the Asset Store EULA is available at http://unity3d.com/company/legal/as_terms.
+// Bản quyền (C) 2015 ricimi - Bảo lưu mọi quyền.
+// Mã này chỉ có thể được sử dụng theo Thỏa thuận Cấp phép Người dùng Cuối của Unity Asset Store.
+// Bản sao EULA của Asset Store có sẵn tại http://unity3d.com/company/legal/as_terms.
 
 using UnityEngine;
 
 namespace Ricimi
 {
-    // This class represents the music button that is used in several places in the demo.
-    // It handles the logic to enable and disable the demo's music and store the player
-    // selection to PlayerPrefs.
+    // Lớp này đại diện cho button nhạc được sử dụng ở nhiều nơi trong demo.
+    // Nó xử lý logic để bật và tắt nhạc của demo và lưu trữ lựa chọn
+    // của người chơi vào PlayerPrefs.
     public class MusicButton : MonoBehaviour
     {
         private SpriteSwapper m_spriteSwapper;

@@ -1,15 +1,15 @@
-// Copyright (C) 2015 ricimi - All rights reserved.
-// This code can only be used under the standard Unity Asset Store End User License Agreement.
-// A Copy of the Asset Store EULA is available at http://unity3d.com/company/legal/as_terms.
+// Bản quyền (C) 2015 ricimi - Bảo lưu mọi quyền.
+// Mã này chỉ có thể được sử dụng theo Thỏa thuận Cấp phép Người dùng Cuối của Unity Asset Store.
+// Bản sao EULA của Asset Store có sẵn tại http://unity3d.com/company/legal/as_terms.
 
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Ricimi
 {
-    // This class manages the level scene of the demo. It handles the left and right
-    // selection buttons that are used to navigate across the available levels and their
-    // associated animations.
+    // Lớp này quản lý scene level của demo. Nó xử lý các button chọn trái và phải
+    // được sử dụng để điều hướng qua các level có sẵn và các
+    // animation liên quan của chúng.
     public class LevelScene : MonoBehaviour
     {
         public GameObject prevLevelButton;

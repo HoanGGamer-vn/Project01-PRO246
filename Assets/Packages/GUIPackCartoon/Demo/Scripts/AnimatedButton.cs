@@ -1,6 +1,6 @@
-// Copyright (C) 2015 ricimi - All rights reserved.
-// This code can only be used under the standard Unity Asset Store End User License Agreement.
-// A Copy of the Asset Store EULA is available at http://unity3d.com/company/legal/as_terms.
+// Bản quyền (C) 2015 ricimi - Bảo lưu mọi quyền.
+// Mã này chỉ có thể được sử dụng theo Thỏa thuận Cấp phép Người dùng Cuối của Unity Asset Store.
+// Bản sao EULA của Asset Store có sẵn tại http://unity3d.com/company/legal/as_terms.
 
 using System;
 using UnityEngine;
@@ -9,12 +9,12 @@ using UnityEngine.EventSystems;
 
 namespace Ricimi
 {
-    // This class is based on the official source code for Unity's UI Button (which can
-    // be found here: https://bitbucket.org/Unity-Technologies/ui), but adds a delay before
-    // calling the button's on-clicked event. The reason for doing this lies in the fact
-    // that the demo buttons are mostly used to open popups o trigger transitions to new scenes,
-    // and it gives a nicer visual feeling to wait for the button animation to be played
-    // for a bit before executing those actions (as opposed to interrupting said animation).
+    // Lớp này dựa trên mã nguồn chính thức cho UI Button của Unity (có thể
+    // tìm thấy tại: https://bitbucket.org/Unity-Technologies/ui), nhưng thêm độ trễ trước khi
+    // gọi sự kiện on-clicked của button. Lý do làm điều này là vì
+    // các button demo chủ yếu được sử dụng để mở popup hoặc kích hoạt chuyển đổi sang scene mới,
+    // và nó mang lại cảm giác thị giác đẹp hơn khi đợi animation button được phát
+    // một chút trước khi thực hiện những hành động đó (thay vì làm gián đoạn animation đó).
     public class AnimatedButton : UIBehaviour, IPointerDownHandler
     {
         [Serializable]

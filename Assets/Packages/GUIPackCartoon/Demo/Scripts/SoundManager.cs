@@ -1,13 +1,13 @@
-// Copyright (C) 2015 ricimi - All rights reserved.
-// This code can only be used under the standard Unity Asset Store End User License Agreement.
-// A Copy of the Asset Store EULA is available at http://unity3d.com/company/legal/as_terms.
+// Bản quyền (C) 2015 ricimi - Bảo lưu mọi quyền.
+// Mã này chỉ có thể được sử dụng theo Thỏa thuận Cấp phép Người dùng Cuối của Unity Asset Store.
+// Bản sao EULA của Asset Store có sẵn tại http://unity3d.com/company/legal/as_terms.
 
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Ricimi
 {
-    // This class handles updating the sound UI widgets depending on the player's selection.
+    // Lớp này xử lý việc cập nhật các widget UI âm thanh tùy thuộc vào lựa chọn của người chơi.
     public class SoundManager : MonoBehaviour
     {
         private Slider m_soundSlider;

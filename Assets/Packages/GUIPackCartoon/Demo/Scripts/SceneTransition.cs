@@ -1,13 +1,13 @@
-// Copyright (C) 2015 ricimi - All rights reserved.
-// This code can only be used under the standard Unity Asset Store End User License Agreement.
-// A Copy of the Asset Store EULA is available at http://unity3d.com/company/legal/as_terms.
+// Bản quyền (C) 2015 ricimi - Bảo lưu mọi quyền.
+// Mã này chỉ có thể được sử dụng theo Thỏa thuận Cấp phép Người dùng Cuối của Unity Asset Store.
+// Bản sao EULA của Asset Store có sẵn tại http://unity3d.com/company/legal/as_terms.
 
 using UnityEngine;
 
 namespace Ricimi
 {
-    // This class is responsible for loading the next scene in a transition (the core of
-    // this work is performed in the Transition class, though).
+    // Lớp này chịu trách nhiệm tải scene tiếp theo trong một chuyển đổi (phần cốt lõi của
+    // công việc này được thực hiện trong lớp Transition).
     public class SceneTransition : MonoBehaviour
     {
         public string scene = "<Insert scene name>";

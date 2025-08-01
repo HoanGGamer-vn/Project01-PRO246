@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1124762272746997671}
   - component: {fileID: 7659239113267612876}
-  - component: {fileID: 8392814636389564646}
+  - component: {fileID: 8853395020535668632}
   m_Layer: 0
   m_Name: Bridge
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8392814636389564646
+--- !u!61 &8853395020535668632
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,14 +121,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.28, y: 6.36}
+    oldSize: {x: 1.2527473, y: 3.4945054}
     newSize: {x: 2.28, y: 6.36}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 6.36}
+  m_Size: {x: 1.2527473, y: 3.4945054}
   m_EdgeRadius: 0
 --- !u!1 &8353953326747145496
 GameObject:
@@ -140,8 +140,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1964281741885384727}
   - component: {fileID: 5591792620280891772}
-  - component: {fileID: 8830745448986582756}
   - component: {fileID: 5329950408729517123}
+  - component: {fileID: 4396304308328217809}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -206,8 +206,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f5a82ca7129929544bccf68ba01bb011, type: 3}
-  2d3d4d23fc23df41ab9ad8dd48dc49154d3f2784
+  m_Sprite: {fileID: 21300000, guid: 494e9abf824b7c9449e1ecd56ada151c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -218,7 +217,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8830745448986582756
+--- !u!114 &5329950408729517123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8353953326747145496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64538ae36c4aaf42983325942c3dfeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonOFF: {fileID: 21300000, guid: 494e9abf824b7c9449e1ecd56ada151c, type: 3}
+  ButtonON: {fileID: 21300000, guid: 790d8e14410a4ad4cae2d8ec34692c8e, type: 3}
+  Bridge: {fileID: 6682133644680022376}
+  targetPosition: {x: 11.3, y: -1.5}
+  moveSpeed: 2
+--- !u!61 &4396304308328217809
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -254,29 +270,12 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.82, y: 1.04}
+    oldSize: {x: 1, y: 0.5714286}
     newSize: {x: 1.82, y: 1.04}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.82, y: 1.04}
+  m_Size: {x: 1, y: 0.5714286}
   m_EdgeRadius: 0
---- !u!114 &5329950408729517123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8353953326747145496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f64538ae36c4aaf42983325942c3dfeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ButtonOFF: {fileID: 21300000, guid: f5a82ca7129929544bccf68ba01bb011, type: 3}
-  ButtonON: {fileID: 21300000, guid: 1fe07d240999571448a62a81a8b9ca67, type: 3}
-  Bridge: {fileID: 6682133644680022376}
-  targetPosition: {x: 11.3, y: -1.5}
-  moveSpeed: 2
