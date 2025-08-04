@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 using System.Collections.Generic;
+=======
+>>>>>>> 0a000cb (Fix Scripts)
 using UnityEngine;
 
 public class ElevatorController : MonoBehaviour
 {
+<<<<<<< HEAD
     [Header("Movement Settings")]
     public Transform[] targets;
     public float moveSpeed = 2f;
@@ -14,6 +18,12 @@ public class ElevatorController : MonoBehaviour
     
     [Tooltip("Các tag được chấp nhận để kích hoạt")]
     public string[] acceptedTags = { "Red", "Blue", "Box" };
+=======
+    public Transform[] targets;
+    public float moveSpeed = 2f;
+    public int requiredObjects = 2;
+    public bool returnWhenEmpty = true;
+>>>>>>> 0a000cb (Fix Scripts)
 
     private Vector3 startPosition;
     private bool isMoving = false;
@@ -21,6 +31,7 @@ public class ElevatorController : MonoBehaviour
     private void Start()
     {
         startPosition = transform.position;
+<<<<<<< HEAD
         
         // Validation settings
         ValidateSettings();
@@ -98,6 +109,23 @@ public class ElevatorController : MonoBehaviour
                 Debug.Log("Không đủ điều kiện, trở về vị trí ban đầu");
                 ReturnToStart();
             }
+=======
+    }
+
+    public void NotifyObjectEntered(int currentCount)
+    {
+        if (currentCount >= requiredObjects && !isMoving)
+        {
+            MoveToTarget();
+        }
+    }
+
+    public void NotifyObjectExited(int currentCount)
+    {
+        if (currentCount < requiredObjects && returnWhenEmpty)
+        {
+            ReturnToStart();
+>>>>>>> 0a000cb (Fix Scripts)
         }
     }
 
@@ -105,7 +133,11 @@ public class ElevatorController : MonoBehaviour
     {
         isMoving = true;
         StopAllCoroutines();
+<<<<<<< HEAD
         StartCoroutine(MoveElevator(targets[0].position));
+=======
+        StartCoroutine(MoveElevator(targets[0].position)); // hoặc chọn nhiều target tùy logic
+>>>>>>> 0a000cb (Fix Scripts)
     }
 
     private void ReturnToStart()
@@ -125,6 +157,7 @@ public class ElevatorController : MonoBehaviour
 
         transform.position = target;
         isMoving = false;
+<<<<<<< HEAD
         Debug.Log("Elevator đã đến vị trí: " + target);
     }
     
@@ -190,4 +223,7 @@ public class ElevatorController : MonoBehaviour
     }
     
     #endregion
+=======
+    }
+>>>>>>> 0a000cb (Fix Scripts)
 }

@@ -16,4 +16,12 @@ public class Data : ScriptableObject
     public bool canRedMoveLeft;
     public bool canBlueMoveRight;
     public bool canBlueMoveLeft;
+<<<<<<< HEAD
+=======
+    public bool canBlueJump;
+    public bool canRedJump;
+
+    public bool isBlueStandOnRed;
+    public bool isRedStandOnBlue;
+>>>>>>> 0a000cb (Fix Scripts)
 }

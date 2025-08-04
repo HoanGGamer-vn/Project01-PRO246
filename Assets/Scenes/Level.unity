@@ -1424,10 +1424,13 @@ PrefabInstance:
       propertyPath: m_text
       value: 2
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 2913643178785850362, guid: b3c3d454955b54620b4a1722514ce76a, type: 3}
       propertyPath: scene
       value: LV2
       objectReference: {fileID: 0}
+=======
+>>>>>>> 0a000cb (Fix Scripts)
     - target: {fileID: 4214995170067816343, guid: b3c3d454955b54620b4a1722514ce76a, type: 3}
       propertyPath: m_SizeDelta.x
       value: 4
@@ -5568,10 +5571,13 @@ PrefabInstance:
       propertyPath: m_text
       value: 3
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 2913643178785850362, guid: b3c3d454955b54620b4a1722514ce76a, type: 3}
       propertyPath: scene
       value: LV3
       objectReference: {fileID: 0}
+=======
+>>>>>>> 0a000cb (Fix Scripts)
     - target: {fileID: 6106796551199986620, guid: b3c3d454955b54620b4a1722514ce76a, type: 3}
       propertyPath: m_Color.b
       value: 0.43529412

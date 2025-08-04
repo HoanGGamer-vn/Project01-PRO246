@@ -13,6 +13,11 @@ public class BlueController : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
 
+<<<<<<< HEAD
+=======
+    private bool isTouchingGround;
+    private bool isTouchingElevator;
+>>>>>>> 0a000cb (Fix Scripts)
     private bool isTouchingRed;
     private bool canJump;
 
@@ -23,6 +28,11 @@ public class BlueController : MonoBehaviour
         animator = GetComponent<Animator>();
 
         isTouchingRed = false;
+<<<<<<< HEAD
+=======
+        isTouchingGround = false;
+        isTouchingElevator = false;
+>>>>>>> 0a000cb (Fix Scripts)
         data.isBlueGrounded = false;
         canJump = false;
     }
@@ -81,10 +91,33 @@ public class BlueController : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D blueCollision)
     {
+<<<<<<< HEAD
         if (blueCollision.gameObject.CompareTag("Tilemap") || blueCollision.gameObject.CompareTag("Elevator"))
         {
             data.isBlueGrounded = true;
             canJump = true;
+=======
+        foreach (ContactPoint2D contact in blueCollision.contacts)
+        {
+            if (contact.normal.y > 0.5f)
+            {
+                if (blueCollision.gameObject.CompareTag("Tilemap"))
+                {
+                    data.isBlueGrounded = true;
+                    isTouchingGround = true;
+                }
+                if (blueCollision.gameObject.CompareTag("Elevator"))
+                {
+                    isTouchingElevator = true;
+                    data.isBlueGrounded = true;
+                }
+                if(isTouchingElevator || isTouchingGround)
+                {
+                    canJump = true;
+                    break;
+                }
+            }
+>>>>>>> 0a000cb (Fix Scripts)
         }
         if (blueCollision.gameObject.CompareTag("Red"))
         {
@@ -94,7 +127,21 @@ public class BlueController : MonoBehaviour
 
     public void OnCollisionExit2D(Collision2D blueCollision)
     {
+<<<<<<< HEAD
         if (blueCollision.gameObject.CompareTag("Tilemap") || blueCollision.gameObject.CompareTag("Elevator"))
+=======
+        if (blueCollision.gameObject.CompareTag("Tilemap"))
+        {
+            isTouchingGround = false;
+        }
+
+        if (blueCollision.gameObject.CompareTag("Elevator"))
+        {
+            isTouchingElevator = false;
+        }
+
+        if (!isTouchingGround && !isTouchingElevator)
+>>>>>>> 0a000cb (Fix Scripts)
         {
             data.isBlueGrounded = false;
             canJump = false;

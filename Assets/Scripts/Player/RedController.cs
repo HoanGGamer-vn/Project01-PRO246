@@ -13,6 +13,11 @@ public class RedController : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
 
+<<<<<<< HEAD
+=======
+    private bool isTouchingGround;
+    private bool isTouchingElevator;
+>>>>>>> 0a000cb (Fix Scripts)
     private bool isTouchingBlue;
     private bool canJump;
 
@@ -79,14 +84,41 @@ public class RedController : MonoBehaviour
         {
             data.isRedStatic = false;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0a000cb (Fix Scripts)
     }
 
     public void OnCollisionEnter2D(Collision2D redCollision)
     {
+<<<<<<< HEAD
         if (redCollision.gameObject.CompareTag("Tilemap") || redCollision.gameObject.CompareTag("Elevator"))
         {
             data.isRedGrounded = true;
             canJump = true;
+=======
+        foreach(ContactPoint2D contact in redCollision.contacts)
+        {
+            if (contact.normal.y > 0.5f)
+            {
+                if (redCollision.gameObject.CompareTag("Tilemap"))
+                {
+                    data.isRedGrounded = true;
+                    isTouchingGround = true;
+                }
+                if (redCollision.gameObject.CompareTag("Elevator"))
+                {
+                    data.isRedGrounded = true;
+                    isTouchingElevator = true;
+                }
+                if (isTouchingGround || isTouchingElevator)
+                {
+                    canJump = true;
+                    break;
+                }
+            }
+>>>>>>> 0a000cb (Fix Scripts)
         }
         if (redCollision.gameObject.CompareTag("Blue"))
         {
@@ -96,7 +128,19 @@ public class RedController : MonoBehaviour
 
     public void OnCollisionExit2D(Collision2D redCollision)
     {
+<<<<<<< HEAD
         if (redCollision.gameObject.CompareTag("Tilemap") || redCollision.gameObject.CompareTag("Elevator"))
+=======
+        if (redCollision.gameObject.CompareTag("Tilemap"))
+        {
+            isTouchingGround = false;
+        }
+        if (redCollision.gameObject.CompareTag("Elevator"))
+        {
+            isTouchingElevator = false;
+        }
+        if (!isTouchingGround && !isTouchingElevator)
+>>>>>>> 0a000cb (Fix Scripts)
         {
             data.isRedGrounded = false;
             canJump = false;

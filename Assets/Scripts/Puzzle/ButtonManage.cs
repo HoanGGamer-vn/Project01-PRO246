@@ -30,7 +30,11 @@ public class ButtonManage : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+<<<<<<< HEAD
         if (other.CompareTag("Red")|| other.CompareTag("Blue"))
+=======
+        if (other.CompareTag("Player"))
+>>>>>>> 0a000cb (Fix Scripts)
         {
             spriteRenderer.sprite = ButtonON;
             moveToTarget = true;
@@ -40,7 +44,11 @@ public class ButtonManage : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
+<<<<<<< HEAD
         if (other.CompareTag("Red")|| other.CompareTag("Blue"))
+=======
+        if (other.CompareTag("Player"))
+>>>>>>> 0a000cb (Fix Scripts)
         {
             spriteRenderer.sprite = ButtonOFF;
             moveToStart = true;

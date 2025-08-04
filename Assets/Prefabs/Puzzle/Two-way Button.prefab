@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 7815952621111950620}
   - component: {fileID: 9072080180375733844}
   - component: {fileID: 9202737095124464534}
+<<<<<<< HEAD
   - component: {fileID: 907517926169833578}
+=======
+>>>>>>> 0a000cb (Fix Scripts)
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -31,8 +34,12 @@ Transform:
   m_LocalPosition: {x: -1.4424362, y: -2.49, z: -0.04446455}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
+<<<<<<< HEAD
   m_Children:
   - {fileID: 5769646337010489297}
+=======
+  m_Children: []
+>>>>>>> 0a000cb (Fix Scripts)
   m_Father: {fileID: 8165191113357912913}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &9072080180375733844
@@ -101,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 5769646337010489297}
   moveSpeed: 2
+<<<<<<< HEAD
 --- !u!61 &907517926169833578
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146,6 +154,8 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2527473, y: 3.4945054}
   m_EdgeRadius: 0
+=======
+>>>>>>> 0a000cb (Fix Scripts)
 --- !u!1 &2686372129873796523
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +188,10 @@ Transform:
   - {fileID: 1918480617987586708}
   - {fileID: 566191289189175440}
   - {fileID: 7815952621111950620}
+<<<<<<< HEAD
+=======
+  - {fileID: 5769646337010489297}
+>>>>>>> 0a000cb (Fix Scripts)
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6938854175636378876
@@ -190,8 +204,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1918480617987586708}
   - component: {fileID: 2410113438201609345}
+<<<<<<< HEAD
   - component: {fileID: 2919464963291047567}
   - component: {fileID: 4272386166477436134}
+=======
+  - component: {fileID: 8998887082567902861}
+  - component: {fileID: 2919464963291047567}
+>>>>>>> 0a000cb (Fix Scripts)
   m_Layer: 0
   m_Name: Button (1)
   m_TagString: Untagged
@@ -266,6 +285,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!114 &2919464963291047567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +302,9 @@ MonoBehaviour:
   offSprite: {fileID: 21300000, guid: 494e9abf824b7c9449e1ecd56ada151c, type: 3}
   onSprite: {fileID: 21300000, guid: 790d8e14410a4ad4cae2d8ec34692c8e, type: 3}
 --- !u!61 &4272386166477436134
+=======
+--- !u!61 &8998887082567902861
+>>>>>>> 0a000cb (Fix Scripts)
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -317,15 +340,39 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
     oldSize: {x: 1, y: 0.5714286}
+=======
+    oldSize: {x: 1.82, y: 1.04}
+>>>>>>> 0a000cb (Fix Scripts)
     newSize: {x: 1.82, y: 1.04}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Size: {x: 1, y: 0.5714286}
   m_EdgeRadius: 0
+=======
+  m_Size: {x: 1.82, y: 1.04}
+  m_EdgeRadius: 0
+--- !u!114 &2919464963291047567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6938854175636378876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e7a2903ce51e044937a0f949703b09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetDevice: {fileID: 9202737095124464534}
+  offSprite: {fileID: 21300000, guid: 494e9abf824b7c9449e1ecd56ada151c, type: 3}
+  onSprite: {fileID: 21300000, guid: 790d8e14410a4ad4cae2d8ec34692c8e, type: 3}
+>>>>>>> 0a000cb (Fix Scripts)
 --- !u!1 &7522371426615590074
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,8 +383,13 @@ GameObject:
   m_Component:
   - component: {fileID: 566191289189175440}
   - component: {fileID: 362300593103341518}
+<<<<<<< HEAD
   - component: {fileID: 3553435425484136354}
   - component: {fileID: 8909348764366760530}
+=======
+  - component: {fileID: 1317612253437527444}
+  - component: {fileID: 3553435425484136354}
+>>>>>>> 0a000cb (Fix Scripts)
   m_Layer: 0
   m_Name: Button (2)
   m_TagString: Untagged
@@ -412,6 +464,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!114 &3553435425484136354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,6 +481,9 @@ MonoBehaviour:
   offSprite: {fileID: 21300000, guid: 494e9abf824b7c9449e1ecd56ada151c, type: 3}
   onSprite: {fileID: 21300000, guid: 790d8e14410a4ad4cae2d8ec34692c8e, type: 3}
 --- !u!61 &8909348764366760530
+=======
+--- !u!61 &1317612253437527444
+>>>>>>> 0a000cb (Fix Scripts)
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -463,15 +519,39 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
     oldSize: {x: 1, y: 0.5714286}
+=======
+    oldSize: {x: 1.82, y: 1.04}
+>>>>>>> 0a000cb (Fix Scripts)
     newSize: {x: 1.82, y: 1.04}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Size: {x: 1, y: 0.5714286}
   m_EdgeRadius: 0
+=======
+  m_Size: {x: 1.82, y: 1.04}
+  m_EdgeRadius: 0
+--- !u!114 &3553435425484136354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7522371426615590074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e7a2903ce51e044937a0f949703b09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetDevice: {fileID: 9202737095124464534}
+  offSprite: {fileID: 21300000, guid: 494e9abf824b7c9449e1ecd56ada151c, type: 3}
+  onSprite: {fileID: 21300000, guid: 790d8e14410a4ad4cae2d8ec34692c8e, type: 3}
+>>>>>>> 0a000cb (Fix Scripts)
 --- !u!1 &8475084639359762066
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,10 +576,19 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8475084639359762066}
   serializedVersion: 2
+<<<<<<< HEAD
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7815952621111950620}
+=======
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.23, y: 3.21, z: -0.007839732}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8165191113357912913}
+>>>>>>> 0a000cb (Fix Scripts)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
