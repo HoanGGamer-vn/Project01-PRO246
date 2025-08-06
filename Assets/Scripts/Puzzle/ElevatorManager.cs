@@ -44,26 +44,26 @@ public class ElevatorManager : MonoBehaviour
             }
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Blue") || collision.gameObject.CompareTag("Red"))
-        {
-            countCrush++;
-            if (countCrush >= 1)
-            {
-                boxCollider.isTrigger = true;
-            }
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Blue") || collision.gameObject.CompareTag("Red"))
-        {
-            countCrush--;
-            if (countCrush < 1)
-            {
-                boxCollider.isTrigger = false;
-            }
-        }
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Blue") || collision.gameObject.CompareTag("Red"))
+    //    {
+    //        countCrush++;
+    //        if (countCrush >= 1)
+    //        {
+    //            boxCollider.isTrigger = true;
+    //        }
+    //    }
+    //}
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Blue") || collision.gameObject.CompareTag("Red"))
+    //    {
+    //        countCrush--;
+    //        if (countCrush < 1)
+    //        {
+    //            boxCollider.isTrigger = false;
+    //        }
+    //    }
+    //}
 }
