@@ -54,7 +54,7 @@ public class BlueControl : MonoBehaviour
 
         // Jump
 
-        if (Input.GetKeyDown(KeyCode.KeypadEnter) && data.canBlueJump)
+        if (Input.GetKeyDown(KeyCode.Space) && data.canBlueJump)
         {
             rb.AddForce(new Vector2(rb.velocity.x, jumpForce), ForceMode2D.Impulse);
         }

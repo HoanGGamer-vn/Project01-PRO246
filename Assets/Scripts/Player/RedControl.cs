@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class RedControl : MonoBehaviour
 {
@@ -13,7 +13,21 @@ public class RedControl : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
 
-    // Start is called before the first frame update
+    public InputActionReference moveAction;
+    public InputActionReference jumpAction;
+
+    void OnEnable()
+    {
+        moveAction.action.Enable();
+        jumpAction.action.Enable();
+    }
+
+    void OnDisable()
+    {
+        moveAction.action.Disable();
+        jumpAction.action.Disable();
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,21 +35,17 @@ public class RedControl : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Move
-        float moveInput = 0f;
+        float moveInput = moveAction.action.ReadValue<float>();
 
-        if (Input.GetKey(KeyCode.A) && data.canRedMoveLeft)
+        if (moveInput < 0 && data.canRedMoveLeft)
         {
-            moveInput = -1f;
             sprite.flipX = true;
             animator.SetBool("isRunning", true);
         }
-        else if (Input.GetKey(KeyCode.D) && data.canRedMoveRight)
+        else if (moveInput > 0 && data.canRedMoveRight)
         {
-            moveInput = 1f;
             sprite.flipX = false;
             animator.SetBool("isRunning", true);
         }
@@ -50,24 +60,13 @@ public class RedControl : MonoBehaviour
         {
             blue_rb.velocity = new Vector2(rb.velocity.x, blue_rb.velocity.y);
         }
-        //-------------------------------------
 
-        // Jump
-        if (Input.GetKeyDown(KeyCode.LeftControl) && data.canRedJump)
+        if (jumpAction.action.WasPressedThisFrame() && data.canRedJump)
         {
-            rb.AddForce(new Vector2(rb.velocity.x, jumpForce), ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
-        //-----------------------------------
 
-        // Check static
-        if (rb.velocity.magnitude < 0.01f)
-        {
-            data.isRedStatic = true;
-        }
-        else
-        {
-            data.isRedStatic = false;
-        }
+        data.isRedStatic = rb.velocity.magnitude < 0.01f;
     }
 
     public void OnTriggerEnter2D(Collider2D redTrigger)

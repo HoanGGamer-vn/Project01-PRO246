@@ -14,8 +14,6 @@ public class ElevatorManager : MonoBehaviour
     private Vector2 currentPos;
     private Vector2 targetPos;
 
-    private int countCrush;
-    private BoxCollider2D boxCollider;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,9 +21,7 @@ public class ElevatorManager : MonoBehaviour
         startPos = transform.position;
         targetPos = new Vector2(startPos.x + inputX, startPos.y + inputY);
 
-        countCrush = 0;
-        boxCollider = GetComponent<BoxCollider2D>();
-        boxCollider.isTrigger = false;
+
     }
 
     // Update is called once per frame
@@ -44,26 +40,4 @@ public class ElevatorManager : MonoBehaviour
             }
         }
     }
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Blue") || collision.gameObject.CompareTag("Red"))
-    //    {
-    //        countCrush++;
-    //        if (countCrush >= 1)
-    //        {
-    //            boxCollider.isTrigger = true;
-    //        }
-    //    }
-    //}
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Blue") || collision.gameObject.CompareTag("Red"))
-    //    {
-    //        countCrush--;
-    //        if (countCrush < 1)
-    //        {
-    //            boxCollider.isTrigger = false;
-    //        }
-    //    }
-    //}
 }

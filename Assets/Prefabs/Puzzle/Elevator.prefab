@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1664110781064200695}
   - component: {fileID: 963306952268943444}
-  - component: {fileID: 3688099294315161472}
   - component: {fileID: 9124916307678476859}
+  - component: {fileID: 5911606795906133263}
+  - component: {fileID: 92107849950762039}
   m_Layer: 0
   m_Name: Elevator
   m_TagString: Elevator
@@ -88,26 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3688099294315161472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3683740398089983210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 565c87699108acf459269c33196eeb5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targets: []
-  moveSpeed: 2
-  returnWhenNotEnoughTags: 1
-  requiredTagCount: 2
-  acceptedTags:
-  - Red
-  - Blue
-  - Box
 --- !u!61 &9124916307678476859
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -153,6 +134,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2527473, y: 3.4945054}
   m_EdgeRadius: 0
+--- !u!114 &5911606795906133263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3683740398089983210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c389aa9c9db3afc42b446dea742668bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateElevator: 0
+  elevatorSpeed: 0
+  inputX: 0
+  inputY: 0
+--- !u!114 &92107849950762039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3683740398089983210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 565c87699108acf459269c33196eeb5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targets: []
+  moveSpeed: 2
+  returnWhenNotEnoughTags: 1
+  requiredTagCount: 2
+  acceptedTags:
+  - Red
+  - Blue
+  - Box
 --- !u!1 &6086674863509011540
 GameObject:
   m_ObjectHideFlags: 0
