@@ -30,14 +30,15 @@ public class RedController : MonoBehaviour
     void Update()
     {
         float moveInput = 0f;
+        float dpadHorizontal = Input.GetAxis("DPadHorizontal");
 
-        if (Input.GetKey(KeyCode.A) && data.canRedMoveLeft)
+        if (dpadHorizontal < 0 && data.canRedMoveLeft)
         {
             moveInput = -1f;
             sprite.flipX = true;
             animator.SetBool("isRunning", true);
         }
-        else if (Input.GetKey(KeyCode.D) && data.canRedMoveRight)
+        else if (dpadHorizontal > 0 && data.canRedMoveRight)
         {
             moveInput = 1f;
             sprite.flipX = false;
@@ -65,7 +66,7 @@ public class RedController : MonoBehaviour
                 canJump = false;
             }
         }
-        if (Input.GetKeyDown(KeyCode.LeftControl) && canJump)
+        if (Input.GetKeyDown(KeyCode.JoystickButton0) && canJump)
         {
             rb.AddForce(new Vector2(rb.velocity.x, jumpForce), ForceMode2D.Impulse);
         }
