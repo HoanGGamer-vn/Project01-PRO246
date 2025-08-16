@@ -12,6 +12,8 @@ public class RedControl : MonoBehaviour
 
     public float moveSpeed;
     public float jumpForce;
+    private bool isAlive;
+    private Vector3 spawnPoint;
 
     public InputActionReference moveAction;
     public InputActionReference jumpAction;
@@ -33,19 +35,25 @@ public class RedControl : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        spawnPoint = blue_rb.position + new Vector2(0, 5f);
+
+        isAlive = true;
+        animator.SetBool("isAlive", true);
     }
 
     void Update()
     {
-        float moveInput = moveAction.action.ReadValue<float>();
-
-        if (moveInput < 0 && data.canRedMoveLeft)
+        float moveAxis = moveAction.action.ReadValue<float>();
+        float moveInput = 0;
+        if (moveAxis < 0 && data.canRedMoveLeft)
         {
+            moveInput = -1;
             sprite.flipX = true;
             animator.SetBool("isRunning", true);
         }
-        else if (moveInput > 0 && data.canRedMoveRight)
+        else if (moveAxis > 0 && data.canRedMoveRight)
         {
+            moveInput = 1;
             sprite.flipX = false;
             animator.SetBool("isRunning", true);
         }
@@ -53,8 +61,15 @@ public class RedControl : MonoBehaviour
         {
             animator.SetBool("isRunning", false);
         }
-
-        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+        if (isAlive)
+        {
+            rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+        }
+        else
+        {
+            animator.SetBool("isAlive", false);
+            StartCoroutine(WaitForDead());
+        }
 
         if (data.isBlueStandOnRed && data.isBlueStatic)
         {
@@ -75,11 +90,31 @@ public class RedControl : MonoBehaviour
         {
             StartCoroutine(WaitforRespawn(2.5f));
         }
+        if (redTrigger.gameObject.CompareTag("Trap"))
+        {
+            if (isAlive)
+            {
+                StartCoroutine(WaitforRespawn(2f));
+                isAlive = false;
+            }
+        }
+        if (redTrigger.gameObject.CompareTag("SpawnPoint"))
+        {
+            spawnPoint = transform.position;
+        }
     }
 
     private IEnumerator WaitforRespawn(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        rb.position = blue_rb.position + new Vector2(0, 5f);
+        rb.position = spawnPoint;
+        isAlive = true;
+        animator.SetBool("isAlive", true);
+    }
+
+    private IEnumerator WaitForDead()
+    {
+        yield return new WaitForSeconds(0.5f);
+        rb.velocity = Vector2.zero;
     }
 }
