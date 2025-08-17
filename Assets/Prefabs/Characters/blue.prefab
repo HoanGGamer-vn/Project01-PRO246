@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6469019913828883064}
   - component: {fileID: 1525536461503438215}
   - component: {fileID: 5935996131880174630}
-  - component: {fileID: 6302116428350431052}
   - component: {fileID: 3029423777813874578}
   - component: {fileID: 4943256225707621396}
+  - component: {fileID: 5346429743904797812}
   m_Layer: 0
   m_Name: blue
   m_TagString: Blue
@@ -115,22 +115,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6302116428350431052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8225805427245515874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a5c780fa82f60a46b4a3cdc92af728e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 537756d9aa46c0847b3617f3b7b88e31, type: 2}
-  red_rb: {fileID: 0}
-  moveSpeed: 3
-  jumpForce: 7
 --- !u!95 &3029423777813874578
 Animator:
   serializedVersion: 5
@@ -203,3 +187,19 @@ PolygonCollider2D:
       - {x: 0.44795966, y: -0.17935905}
       - {x: 0.45031285, y: 0.4841209}
   m_UseDelaunayMesh: 0
+--- !u!114 &5346429743904797812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225805427245515874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c42270c7c214546ae3c6df336fa6c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 537756d9aa46c0847b3617f3b7b88e31, type: 2}
+  red_rb: {fileID: 0}
+  moveSpeed: 3
+  jumpForce: 7
