@@ -39,12 +39,12 @@ public class DoorController : MonoBehaviour
         if (data.hasKey && count == 2)
         {
             door.sprite = openDoorSprite;
-            
+
             // Chỉ set completed và kích hoạt object một lần
             if (!data.isCompleted)
             {
                 data.isCompleted = true;
-                Debug.Log("Điều kiện hoàn thành! Kích hoạt target object...");
+                //Debug.Log("Điều kiện hoàn thành! Kích hoạt target object...");
                 ActivateTargetObject();
             }
         }

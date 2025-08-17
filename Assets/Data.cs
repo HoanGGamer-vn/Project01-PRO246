@@ -21,4 +21,6 @@ public class Data : ScriptableObject
 
     public bool isBlueStandOnRed;
     public bool isRedStandOnBlue;
+
+    public int lifeCount;
 }
