@@ -12,12 +12,18 @@ public class BlueControl : MonoBehaviour
 
     public float moveSpeed;
     public float jumpForce;
+    private bool isAlive;
+    private Vector3 spawnPoint;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        isAlive = true;
+        animator.SetBool("isAlive", true);
+        spawnPoint = red_rb.position + new Vector2(0, 5f);
     }
 
     // Update is called once per frame
@@ -43,7 +49,15 @@ public class BlueControl : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
 
-        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+        if(isAlive)
+        {
+            rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+        }
+        else
+        {
+            animator.SetBool("isAlive", false);
+            StartCoroutine(WaitForDead());
+        }
 
         if (data.isRedStandOnBlue && data.isRedStatic)
         {
@@ -77,11 +91,29 @@ public class BlueControl : MonoBehaviour
         {
             StartCoroutine(WaitforRespawn(2.5f));
         }
+        if(blueTrigger.gameObject.CompareTag("Trap"))
+        {
+            if(isAlive)
+            {
+                StartCoroutine(WaitforRespawn(2f));
+                isAlive = false;
+            }
+        }
+        if (blueTrigger.gameObject.CompareTag("SpawnPoint"))
+        {
+            spawnPoint = transform.position;
+        }
     }
     private IEnumerator WaitforRespawn(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        rb.position = red_rb.position + new Vector2(0, 5f);
+        rb.position = spawnPoint;
+        isAlive = true;
+        animator.SetBool("isAlive", true);
     }
-
+    private IEnumerator WaitForDead()
+    {
+        yield return new WaitForSeconds(0.5f);
+        rb.velocity = Vector2.zero;
+    }
 }

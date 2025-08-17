@@ -5382,8 +5382,8 @@ GameObject:
   m_Component:
   - component: {fileID: 945244268}
   - component: {fileID: 945244270}
-  - component: {fileID: 945244269}
   - component: {fileID: 945244271}
+  - component: {fileID: 945244272}
   m_Layer: 0
   m_Name: CheckRedGround
   m_TagString: Untagged
@@ -5406,20 +5406,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1471217547}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &945244269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 945244267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baa61691cb18e0a4ca3e032e4e5c8825, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1471217542}
-  data: {fileID: 11400000, guid: 537756d9aa46c0847b3617f3b7b88e31, type: 2}
 --- !u!61 &945244270
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5492,6 +5478,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &945244272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945244267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80c5d055973421e4baba3e4e6c977a71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redPlayer: {fileID: 1471217542}
+  data: {fileID: 11400000, guid: 537756d9aa46c0847b3617f3b7b88e31, type: 2}
 --- !u!4 &1070873519 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8677659930081747158, guid: d4d3495c99b19dc40a27214eb704e111, type: 3}
@@ -5893,8 +5893,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1473153346}
   - component: {fileID: 1473153348}
-  - component: {fileID: 1473153347}
   - component: {fileID: 1473153349}
+  - component: {fileID: 1473153350}
   m_Layer: 0
   m_Name: CheckBlueGround
   m_TagString: Untagged
@@ -5917,20 +5917,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2025548391}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1473153347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1473153345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baa61691cb18e0a4ca3e032e4e5c8825, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 2025548386}
-  data: {fileID: 11400000, guid: 537756d9aa46c0847b3617f3b7b88e31, type: 2}
 --- !u!61 &1473153348
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6003,6 +5989,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1473153350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473153345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e0e02ba9c45c0042bbcf36650b8cb98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bluePlayer: {fileID: 2025548386}
+  data: {fileID: 11400000, guid: 537756d9aa46c0847b3617f3b7b88e31, type: 2}
 --- !u!1 &1488482195
 GameObject:
   m_ObjectHideFlags: 0
@@ -6098,6 +6098,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c389aa9c9db3afc42b446dea742668bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  needButton: 1
+  isRepeat: 0
   activateElevator: 0
   elevatorSpeed: 2
   inputX: 0
@@ -6650,12 +6652,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elevator
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 5911606795906133263, guid: c3c47b47e1d635a459a8f9c568b6bbc8, type: 3}
+    - {fileID: 92107849950762039, guid: c3c47b47e1d635a459a8f9c568b6bbc8, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6086674863509011540, guid: c3c47b47e1d635a459a8f9c568b6bbc8, type: 3}
     - {fileID: 9033766900553385097, guid: c3c47b47e1d635a459a8f9c568b6bbc8, type: 3}

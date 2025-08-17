@@ -14,6 +14,12 @@ TagManager:
   - Player
   - Enemy
   - Box
+  - Trap
+  - Slime
+  - Ball
+  - SpawnPoint
+  - Button
+  - Goal
   layers:
   - Default
   - TransparentFX
