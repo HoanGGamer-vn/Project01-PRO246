@@ -5771,6 +5771,10 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3912627320528128566, guid: b875d76bc6a6c7547ae8abd6b063ac2c, type: 3}
+      propertyPath: blue_rb
+      value: 
+      objectReference: {fileID: 882786305}
     - target: {fileID: 4016369349090105163, guid: b875d76bc6a6c7547ae8abd6b063ac2c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.2
@@ -5843,17 +5847,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: red
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8232703145551993889, guid: b875d76bc6a6c7547ae8abd6b063ac2c, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4016369349090105163, guid: b875d76bc6a6c7547ae8abd6b063ac2c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 945244268}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8615617594053541650, guid: b875d76bc6a6c7547ae8abd6b063ac2c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1471217551}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b875d76bc6a6c7547ae8abd6b063ac2c, type: 3}
 --- !u!1 &1471217542 stripped
 GameObject:
@@ -5865,24 +5865,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4016369349090105163, guid: b875d76bc6a6c7547ae8abd6b063ac2c, type: 3}
   m_PrefabInstance: {fileID: 1471217541}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1471217551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1471217542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12d43cf4596ea0a41aea60a451a3397a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 537756d9aa46c0847b3617f3b7b88e31, type: 2}
-  blue_rb: {fileID: 882786305}
-  moveSpeed: 3
-  jumpForce: 7
-  moveAction: {fileID: 2550200564631265171, guid: b4f4e2a73dc32bb44b230bd952610052, type: 3}
-  jumpAction: {fileID: -6971014489856838672, guid: b4f4e2a73dc32bb44b230bd952610052, type: 3}
 --- !u!1 &1473153345
 GameObject:
   m_ObjectHideFlags: 0
@@ -6346,6 +6328,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5346429743904797812, guid: 56563677db1eec24bafb467af7fad9e4, type: 3}
+      propertyPath: red_rb
+      value: 
+      objectReference: {fileID: 1129097213}
     - target: {fileID: 5935996131880174630, guid: 56563677db1eec24bafb467af7fad9e4, type: 3}
       propertyPath: m_Material
       value: 
@@ -6414,39 +6400,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: blue
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6302116428350431052, guid: 56563677db1eec24bafb467af7fad9e4, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6469019913828883064, guid: 56563677db1eec24bafb467af7fad9e4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1473153346}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8225805427245515874, guid: 56563677db1eec24bafb467af7fad9e4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2025548387}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56563677db1eec24bafb467af7fad9e4, type: 3}
 --- !u!1 &2025548386 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8225805427245515874, guid: 56563677db1eec24bafb467af7fad9e4, type: 3}
   m_PrefabInstance: {fileID: 2025548385}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2025548387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2025548386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7c42270c7c214546ae3c6df336fa6c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 537756d9aa46c0847b3617f3b7b88e31, type: 2}
-  red_rb: {fileID: 1129097213}
-  moveSpeed: 3
-  jumpForce: 7
 --- !u!4 &2025548391 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6469019913828883064, guid: 56563677db1eec24bafb467af7fad9e4, type: 3}
@@ -6649,10 +6615,6 @@ PrefabInstance:
     - target: {fileID: 3683740398089983210, guid: c3c47b47e1d635a459a8f9c568b6bbc8, type: 3}
       propertyPath: m_Name
       value: Elevator
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

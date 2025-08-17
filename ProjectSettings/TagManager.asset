@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Red
   - Blue
-  - TileMap
   - Tilemap
   - LowLimit
   - Elevator
@@ -14,15 +13,16 @@ TagManager:
   - Player
   - Enemy
   - Box
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - Puzzle
-  - 
+  - Platform
+  - Player
   - 
   - 
   - 
