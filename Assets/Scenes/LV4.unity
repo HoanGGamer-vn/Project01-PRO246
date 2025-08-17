@@ -376,6 +376,29 @@ DistanceJoint2D:
 --- !u!1001 &155881503
 PrefabInstance:
   m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 408377029}
+  - component: {fileID: 408377032}
+  - component: {fileID: 408377031}
+  - component: {fileID: 408377030}
+  m_Layer: 0
+  m_Name: CheckRedGround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &408377029
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408377028}
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
@@ -599,6 +622,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+
   m_GameObject: {fileID: 716831387}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -4832,6 +4856,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 5dfa753fa539ca54fa8b155bf362e4a0, type: 2}
   m_TileSpriteArray:
@@ -4841,6 +4866,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+
   - m_RefCount: 4
     m_Data: {fileID: -329647656, guid: ccb3e665b0eb84e4c9a169c15a718542, type: 3}
   m_TileMatrixArray:
@@ -4863,11 +4889,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
+
   - m_RefCount: 266
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+
   m_Origin: {x: -9, y: -7, z: 0}
   m_Size: {x: 43, y: 19, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -5966,6 +5994,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e0c8c5f79fc3dc4caf466d9509533e3, type: 3}
+
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

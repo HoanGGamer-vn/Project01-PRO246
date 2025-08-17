@@ -5,6 +5,7 @@ using UnityEngine;
 public class ButtonController : MonoBehaviour
 {
     private SpriteRenderer sr;
+    public bool isOneTimeButton;
     public Sprite button;
     public Sprite pressedButton;
     public GameObject elevator;
@@ -21,25 +22,43 @@ public class ButtonController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Blue") || collision.gameObject.CompareTag("Red") || collision.gameObject.CompareTag("Box"))
+        if (isOneTimeButton)
         {
-            pressedCount++;
-            if (pressedCount == 1)
+            if (collision.gameObject.CompareTag("Blue") || collision.gameObject.CompareTag("Red") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Ball"))
             {
                 sr.sprite = pressedButton;
                 elevatorManager.activateElevator = true;
             }
         }
+        else
+        {
+            if (collision.gameObject.CompareTag("Blue") || collision.gameObject.CompareTag("Red") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Ball"))
+            {
+                pressedCount++;
+                if (pressedCount == 1)
+                {
+                    sr.sprite = pressedButton;
+                    elevatorManager.activateElevator = true;
+                }
+            }
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Blue") || collision.gameObject.CompareTag("Red") || collision.gameObject.CompareTag("Box"))
+        if (isOneTimeButton)
         {
-            pressedCount--;
-            if (pressedCount <= 0)
+            return;
+        }
+        else
+        {
+            if (collision.gameObject.CompareTag("Blue") || collision.gameObject.CompareTag("Red") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Ball"))
             {
-                sr.sprite = button;
-                elevatorManager.activateElevator = false;
+                pressedCount--;
+                if (pressedCount <= 0)
+                {
+                    sr.sprite = button;
+                    elevatorManager.activateElevator = false;
+                }
             }
         }
     }
