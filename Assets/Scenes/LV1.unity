@@ -5747,7 +5747,7 @@ PrefabInstance:
     - target: {fileID: 3362956106575406675, guid: b875d76bc6a6c7547ae8abd6b063ac2c, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: dea25665321582546aa5b3a2e17f164e, type: 2}
+      objectReference: {fileID: 6200000, guid: dec8b3dce5fe4b3409cd4ecb5b11dd19, type: 2}
     - target: {fileID: 3362956106575406675, guid: b875d76bc6a6c7547ae8abd6b063ac2c, type: 3}
       propertyPath: m_GravityScale
       value: 2
@@ -5932,6 +5932,7 @@ MonoBehaviour:
   needButton: 1
   isRepeat: 0
   activateElevator: 0
+  isNeed2: 0
   elevatorSpeed: 2
   inputX: 0
   inputY: 8
@@ -6184,10 +6185,14 @@ PrefabInstance:
       propertyPath: red_rb
       value: 
       objectReference: {fileID: 1129097213}
+    - target: {fileID: 5500251161511995668, guid: 56563677db1eec24bafb467af7fad9e4, type: 3}
+      propertyPath: red_rb
+      value: 
+      objectReference: {fileID: 1129097213}
     - target: {fileID: 5935996131880174630, guid: 56563677db1eec24bafb467af7fad9e4, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: dea25665321582546aa5b3a2e17f164e, type: 2}
+      objectReference: {fileID: 6200000, guid: dec8b3dce5fe4b3409cd4ecb5b11dd19, type: 2}
     - target: {fileID: 5935996131880174630, guid: 56563677db1eec24bafb467af7fad9e4, type: 3}
       propertyPath: m_GravityScale
       value: 2
@@ -6255,32 +6260,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8225805427245515874, guid: 56563677db1eec24bafb467af7fad9e4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2025548396}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56563677db1eec24bafb467af7fad9e4, type: 3}
---- !u!1 &2025548386 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8225805427245515874, guid: 56563677db1eec24bafb467af7fad9e4, type: 3}
-  m_PrefabInstance: {fileID: 2025548385}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2025548396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2025548386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7c42270c7c214546ae3c6df336fa6c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 537756d9aa46c0847b3617f3b7b88e31, type: 2}
-  red_rb: {fileID: 1129097213}
-  moveSpeed: 3
-  jumpForce: 7
 --- !u!1 &2034124907
 GameObject:
   m_ObjectHideFlags: 0
@@ -6416,8 +6397,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03c97b823ce32f41a3c3d7f7721e9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blue: {fileID: 0}
-  red: {fileID: 0}
+  blue: {fileID: 882786305}
+  red: {fileID: 1129097213}
 --- !u!224 &2056416110 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 22443118, guid: 9b58286c6739040c59d9eb8457e0d929, type: 3}

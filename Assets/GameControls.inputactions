@@ -40,7 +40,7 @@
                 {
                     "name": "Negative",
                     "id": "954a89e2-94b5-45b6-a946-ebdf88db80db",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard1",
@@ -51,7 +51,7 @@
                 {
                     "name": "Positive",
                     "id": "0a4be65c-e865-4182-8587-1075cd81ecb5",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard1",
@@ -128,7 +128,7 @@
                 {
                     "name": "",
                     "id": "e3aa8152-1575-4623-aa02-5febc61b7696",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard1",
@@ -150,7 +150,7 @@
                 {
                     "name": "",
                     "id": "744bb67a-6006-426a-8daa-8a35f21a4749",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
@@ -308,7 +308,7 @@
                 {
                     "name": "",
                     "id": "88bb47a1-0246-4cae-ba65-e453306a462d",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
