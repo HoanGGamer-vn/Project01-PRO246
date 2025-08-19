@@ -7,6 +7,8 @@ public class ElevatorManager : MonoBehaviour
     public bool needButton;
     public bool isRepeat;
     public bool activateElevator;
+    public bool isNeed2;
+    private int playerCount;
     private bool isGoing;
 
     public float elevatorSpeed;
@@ -27,6 +29,7 @@ public class ElevatorManager : MonoBehaviour
         {
             isGoing = true;
         }
+        playerCount = 0;
         startPos = transform.position;
         targetPos = new Vector2(startPos.x + inputX, startPos.y + inputY);
     }
@@ -49,6 +52,13 @@ public class ElevatorManager : MonoBehaviour
         else
         {
             ReturnToStart();
+        }
+        if(isNeed2)
+        {
+
+        }
+        else
+        {
         }
     }
 
@@ -81,6 +91,28 @@ public class ElevatorManager : MonoBehaviour
         else
         {
             ReturnToStart();
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Blue") || collision.gameObject.CompareTag("Red"))
+        {
+            playerCount++;
+            if (playerCount >= 2 && isNeed2)
+            {
+                activateElevator = true;
+            }
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Blue") || collision.gameObject.CompareTag("Red"))
+        {
+            playerCount--;
+            if (playerCount < 2 && isNeed2)
+            {
+                activateElevator = false;
+            }
         }
     }
 }

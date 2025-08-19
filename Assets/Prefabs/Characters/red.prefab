@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 3362956106575406675}
   - component: {fileID: 8987430656012578866}
   - component: {fileID: 1276145383151193808}
-  - component: {fileID: 3912627320528128566}
   - component: {fileID: 2091238887950444402}
   - component: {fileID: 1439653445223816019}
   - component: {fileID: 8906449587151214528}
@@ -311,24 +310,6 @@ PolygonCollider2D:
       - {x: 0.44839454, y: -0.18115553}
       - {x: 0.44851613, y: 0.48632646}
   m_UseDelaunayMesh: 0
---- !u!114 &3912627320528128566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8615617594053541650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12d43cf4596ea0a41aea60a451a3397a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 537756d9aa46c0847b3617f3b7b88e31, type: 2}
-  blue_rb: {fileID: 0}
-  moveSpeed: 3
-  jumpForce: 7
-  moveAction: {fileID: 2550200564631265171, guid: b4f4e2a73dc32bb44b230bd952610052, type: 3}
-  jumpAction: {fileID: -6971014489856838672, guid: b4f4e2a73dc32bb44b230bd952610052, type: 3}
 --- !u!114 &2091238887950444402
 MonoBehaviour:
   m_ObjectHideFlags: 0

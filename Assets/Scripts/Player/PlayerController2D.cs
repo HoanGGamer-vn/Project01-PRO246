@@ -26,6 +26,7 @@ public class PlayerController2D : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator.SetBool("isAlive", true);
     }
 
     // Xử lý input di chuyển

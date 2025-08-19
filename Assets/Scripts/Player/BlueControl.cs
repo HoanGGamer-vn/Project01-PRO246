@@ -13,7 +13,8 @@ public class BlueControl : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
     private bool isAlive;
-    private Vector3 spawnPoint;
+    private Vector2 spawnPoint;
+    private bool checkSpawnPointOnRed;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class BlueControl : MonoBehaviour
         animator = GetComponent<Animator>();
         isAlive = true;
         animator.SetBool("isAlive", true);
+        checkSpawnPointOnRed = true;
         spawnPoint = red_rb.position + new Vector2(0, 5f);
     }
 
@@ -83,6 +85,8 @@ public class BlueControl : MonoBehaviour
         {
             data.isBlueStatic = false;
         }
+
+        SetSpawnPointOnRed();
     }
 
     public void OnTriggerEnter2D(Collider2D blueTrigger)
@@ -101,6 +105,7 @@ public class BlueControl : MonoBehaviour
         }
         if (blueTrigger.gameObject.CompareTag("SpawnPoint"))
         {
+            checkSpawnPointOnRed = false;
             spawnPoint = transform.position;
         }
     }
@@ -115,5 +120,12 @@ public class BlueControl : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         rb.velocity = Vector2.zero;
+    }
+    private void SetSpawnPointOnRed()
+    {
+        if (checkSpawnPointOnRed && spawnPoint != red_rb.position + new Vector2(0, 5f))
+        {
+            spawnPoint = red_rb.position + new Vector2(0, 5f);
+        }
     }
 }

@@ -13,7 +13,8 @@ public class RedControl : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
     private bool isAlive;
-    private Vector3 spawnPoint;
+    private Vector2 spawnPoint;
+    private bool checkSpawnPointOnBlue;
 
     public InputActionReference moveAction;
     public InputActionReference jumpAction;
@@ -35,6 +36,7 @@ public class RedControl : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        checkSpawnPointOnBlue = true;
         spawnPoint = blue_rb.position + new Vector2(0, 5f);
 
         isAlive = true;
@@ -82,6 +84,8 @@ public class RedControl : MonoBehaviour
         }
 
         data.isRedStatic = rb.velocity.magnitude < 0.01f;
+
+        SetSpawnPointOnBlue();
     }
 
     public void OnTriggerEnter2D(Collider2D redTrigger)
@@ -100,6 +104,7 @@ public class RedControl : MonoBehaviour
         }
         if (redTrigger.gameObject.CompareTag("SpawnPoint"))
         {
+            checkSpawnPointOnBlue = false;
             spawnPoint = transform.position;
         }
     }
@@ -116,5 +121,12 @@ public class RedControl : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         rb.velocity = Vector2.zero;
+    }
+    private void SetSpawnPointOnBlue()
+    {
+        if (checkSpawnPointOnBlue && spawnPoint != blue_rb.position + new Vector2(0, 5f))
+        {
+            spawnPoint = blue_rb.position + new Vector2(0, 5f);
+        }
     }
 }

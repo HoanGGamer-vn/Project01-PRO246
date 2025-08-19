@@ -10,7 +10,9 @@ public class DoorController : MonoBehaviour
     private SpriteRenderer door;
     public Sprite openDoorSprite;
     public Sprite closedDoorSprite;
-    
+    public AudioSource backGroundAudio;
+    public AudioClip winSound;
+
     [Header("Completion Settings")]
     [Tooltip("Object sẽ được kích hoạt khi hoàn thành điều kiện")]
     public GameObject targetObjectToActivate;
@@ -23,6 +25,8 @@ public class DoorController : MonoBehaviour
     
     // Private variables
     private bool hasActivated = false;
+    private AudioSource winAudio;
+    private bool checkWinSoundActivated;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +37,8 @@ public class DoorController : MonoBehaviour
         data.hasKey = false;
         data.isCompleted = false;
         hasActivated = false;
+        winAudio = GetComponent<AudioSource>();
+        checkWinSoundActivated = false;
     }
     void Update()
     {
@@ -51,6 +57,16 @@ public class DoorController : MonoBehaviour
         else
         {
             door.sprite = closedDoorSprite;
+        }
+
+        if(data.isCompleted)
+        {
+            backGroundAudio.Stop();
+            if (!checkWinSoundActivated)
+            {
+                checkWinSoundActivated = true;
+                winAudio.PlayOneShot(winSound);
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
